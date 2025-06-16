@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*start of ppup*/
 .ppup-wrapper {
   max-width: 1000px;
@@ -106,4 +107,19 @@
 
 .pmsup-list li {
   margin-bottom: 15px;
+=======
+.Policy{
+    margin-top: 6vi;
+}
+
+.Policy h2{
+    color: #143980;
+}
+
+.Policy ol{
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 2rem;
+    overflow: auto;
+>>>>>>> 8b7d8a8ed3d3793341c86e1d667058abcac54e57
 }
