@@ -31,3 +31,33 @@ function resetAutoSlide() {
 // Start initially
 startAutoSlide();
 
+
+// ===== Modal Logic =====
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".image-modal .close");
+
+// Add click event to each card image
+Array.from(document.querySelectorAll(".card img")).forEach(img => {
+  img.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent anchor link
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+    clearInterval(autoSlideInterval); // Pause slider while modal is open
+  });
+});
+
+// Close modal on close button
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+  startAutoSlide(); // Resume slider
+};
+
+// Close modal when clicking outside the image
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    startAutoSlide(); // Resume slider
+  }
+};
+  
