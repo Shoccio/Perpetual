@@ -1,0 +1,14 @@
+.Policy{
+    margin-top: 6vi;
+}
+
+.Policy h2{
+    color: #143980;
+}
+
+.Policy ol{
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 2rem;
+    overflow: auto;
+}
