@@ -1,19 +1,47 @@
 /*start of ppup*/
-     
-        /* Main wrapper class */
-        .ppup-wrapper {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-        }
-        /* Style for the image when placed on top */
-        .ppup-image {
-            display: block;
-            margin: 0 auto 2rem auto;
-            max-width: 60%;
-            height: auto;
+.ppup-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
 
-        }
+.ppup-wrapper h1 {
+    text-align: center;
+    font-size: 38px;
+    color: #173d7f;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ppup-wrapper h2{
+    color: #173d7f;
+}
+
+.ppup-wrapper ol{
+  list-style: decimal inside;
+  padding-left: 0;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 18px;
+
+  max-width: 900px;
+   font-family: "Barlow Semi Condensed", sans-serif;    
+}
+
+.ppup-wrapper ul{
+    list-style-position: inside;
+}
+
+.ppup-wrapper p{
+    margin-bottom: 1em;
+}
+
+.ppup-description {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
 
         .ppup-section {
             padding-bottom: 1rem;

@@ -726,7 +726,11 @@ header {
 }
 
 /* === Scroller Area === */
-
+.scroller {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, rgb(0, 0, 0) 80%, transparent);
+}
 
 .scroller__inner {
   display: inline-flex;
