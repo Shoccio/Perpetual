@@ -327,13 +327,13 @@
     </header>
 
     <main>
-    <!-- Start of Home Page -->
-
-    
+<!-- Start of Home Page -->
+  
 <section id="Home" class="slider-wrapper">
-   <div style="height: 5dvw;"></div>
-  <div class="slider-container">
-    <div class="slider" id="slider">
+  <div style="height: 5dvw;"></div>
+
+  <div class="scroller" data-speed="slow">
+    <div class="scroller__inner">
       <!-- Card 1 -->
       <a href="#link1" class="card">
         <img src="img/enrollment/BSBA.jpg" alt="Card 1" />
@@ -354,40 +354,26 @@
         <img src="img/enrollment/BSMA.jpg" alt="Card 4" />
       </a>
 
-       <!-- Card 5 -->
+      <!-- Card 5 -->
       <a href="#link5" class="card">
         <img src="img/enrollment/SHS.jpg" alt="Card 5" />
       </a>
-     
-           <!-- Card 6 -->
+
+      <!-- Card 6 -->
       <a href="#link6" class="card">
         <img src="img/enrollment/IENG.jpg" alt="Card 6" />
       </a>
-
-      
-
-
     </div>
   </div>
-
- <div class="slider-controls">
-  <button onclick="slide(-1)">&#10094;</button> <!-- Left Arrow -->
-  <button onclick="slide(1)">&#10095;</button>  <!-- Right Arrow -->
-</div>
-
-
-
-
-
 </section>
-
 <!-- Image Modal -->
 <div id="imageModal" class="image-modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="modalImage">
+  <img class="modal-content" id="modalImage" alt="Preview" />
 </div>
 
 <!-- End of Home Page -->
+
 
 
 
@@ -780,9 +766,7 @@
     </main>
 
 
-    <script src="/script/slider.js"></script>
-
-
+    <script src="/script/cardslider.js"></script>
     <script src="/script/navbar.js"></script>
 
     <script src="/script/scrolltop.js"></script>

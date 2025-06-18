@@ -2,7 +2,12 @@
 .ppup-wrapper {
   max-width: 1000px;
   margin: 0 auto;
+<<<<<<< HEAD
   padding: 60px 20px 30px 20px;
+=======
+  padding: 60px 20px;
+  margin-top: 5vi;
+>>>>>>> b0e280f53af0dc9e519230885230b00920722dbb
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
@@ -44,41 +49,48 @@
   margin-bottom: 30px;
 }
 
-.ppup-section {
-  margin-bottom: 40px;
-}
-
-.ppup-title {
-  font-size: 28px;
-  color: #173d7f;
-  margin-bottom: 20px;
-}
-
-.ppup-list {
-  list-style: decimal inside;
-  padding-left: 0;
-  margin: auto;
-  line-height: 1.8;
-  font-size: 18px;
-
-  max-width: 900px;
-   font-family: "Barlow Semi Condensed", sans-serif;
-}
-
-.ppup-list strong {
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  font-family: "Barlow Semi Condensed", sans-serif;
-}
-
-
-
-
-
-.ppup-list li {
-  margin-bottom: 15px;
-}
+        .ppup-section {
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .ppup-section + .ppup-section {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+        }
+        .ppup-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.75rem;
+            color: #173d7f;
+        }
+        .ppup-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #173d7f;
+        }
+        .ppup-list {
+            list-style-type: decimal;
+            padding-left: 1.25rem;
+            color: #000000;
+        }
+        .ppup-list li {
+            margin-bottom: 0.75rem;
+        }
+        .ppup-nested-list {
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+        .ppup-nested-list li {
+            margin-bottom: 0.25rem;
+        }
 
 /*start of pmsup*/
 .pmsup-wrapper {
@@ -89,6 +101,7 @@
 }
 
 .pmsup-title {
+  text-align: center;
   font-size: 38px;
   color: #173d7f;
   font-weight: 700;
@@ -109,6 +122,10 @@
   font-size: 28px;
   color: #173d7f;
   margin-bottom: 20px;
+}
+
+.pmsup2-title {
+  color: #173d7f;
 }
 
 .pmsup-list {

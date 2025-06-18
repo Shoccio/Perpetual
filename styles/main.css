@@ -26,6 +26,8 @@ body {
 /*Start of Navigation Bar*/
 .perpslogo {
   width: 75%;
+
+  padding-left: 5%;
 }
 .navbar {
   display: flex;
@@ -713,124 +715,115 @@ header {
   }
 }
 
-/* start of slider*/
 
 
+/* === START OF SLIDER === */
 .slider-wrapper {
   width: 100%;
   margin: auto;
-  padding: 100px 0;
+  padding: 100px 0 50px;
   background-color: #f9f9f9;
 }
 
-/* Hide overflow; let slider fill container */
-.slider-container {
+/* === Scroller Area === */
+.scroller {
   overflow: hidden;
-  width: 100%;
-  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, rgb(0, 0, 0) 80%, transparent);
 }
 
-/* Flex row */
-.slider {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
-/* Cards: reduce padding so they fill more space */
-.card {
-  flex: 0 0 33.3333%;
-  box-sizing: border-box;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
+.scroller__inner {
+  display: inline-flex;
+  gap: 1rem;
+  animation: scroll-x 40s linear infinite;
   align-items: center;
+}
+
+/* === Card Styles === */
+.card {
+  flex: 0 0 auto;
+  width: 90vw;              /* Responsive: takes up 90% of viewport width on small screens */
+  max-width: 400px;         /* Limit on large screens */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  max-width: 100%;
   height: auto;
-  max-height: none; /* Remove the 350px limit */
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-
-
-/* Mobile: 1 per view */
-@media (max-width: 768px) {
-  .card {
-    flex: 0 0 50%;
-    padding: 0 10px;
+/* === Keyframes for Scrolling === */
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-@media (max-width: 767px) {
+/* === Responsive Breakpoints === */
+
+/* Tablets and larger */
+@media (min-width: 600px) {
   .card {
-    flex: 0 0 100%;
-    padding: 0 10px;
+    width: 45vw;
   }
 }
 
-/* Stylish Controls at edges */
-.slider-controls {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%); /* Pull back up by 50% of its height */
-  padding: 0 20px;
-  z-index: 0; /* Lower than navbar */
-  pointer-events: none; /* Let buttons receive clicks only */
+/* Desktops and larger */
+@media (min-width: 1024px) {
+  .card {
+    width: 300px;
+  }
 }
 
-
-.slider-controls button {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 24px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: background-color 0.3s ease;
+/* Large Desktops */
+@media (min-width: 1440px) {
+  .card {
+    width: 350px;
+  }
 }
-
-.slider-controls button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
 
 .image-modal {
   display: none;
   position: fixed;
   z-index: 999;
-  top: 0;
   left: 0;
-  height: 100%;
+  top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
 }
 
+.image-modal.show {
+  display: flex;
+}
+
 .image-modal .modal-content {
-  max-width: 80%;
+  max-width: 90%;
   max-height: 80%;
   border-radius: 12px;
-  animation: zoomIn 0.3s ease;
-  box-shadow: 0 0 30px #000;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.3s ease;
 }
 
 .image-modal .close {
   position: absolute;
   top: 30px;
-  right: 50px;
+  right: 40px;
   color: white;
   font-size: 40px;
   font-weight: bold;
@@ -838,23 +831,17 @@ header {
   z-index: 1000;
 }
 
-@keyframes zoomIn {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Optional Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
-/* end of slider*/
 
-
-
-
-
-
+/* Pause scroll when modal is open */
+.scroller.paused .scroller__inner {
+  animation-play-state: paused !important;
+}
+/*END OF SLIDER*/
 
 
 
