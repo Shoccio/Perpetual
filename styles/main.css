@@ -26,8 +26,7 @@ body {
 /*Start of Navigation Bar*/
 .perpslogo {
   width: 75%;
-
-  padding-left: 5%;
+  padding-left: 0px;
 }
 .navbar {
   display: flex;
@@ -702,6 +701,24 @@ header {
   }
 }
 
+
+/* Tablets/iPads */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .navlogo img {
+    height: 90%;
+    width: 90%;
+    padding-top: 10px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .navlogo img {
+    height: 95px;
+    width: 95%;
+  }
+}
+
 @media (max-width: 1265px) {
   .navbar {
     padding-bottom: 1rem;
@@ -714,7 +731,6 @@ header {
     margin: auto;
   }
 }
-
 
 
 /* === START OF SLIDER === */
@@ -735,7 +751,7 @@ header {
 .scroller__inner {
   display: inline-flex;
   gap: 1rem;
-  animation: scroll-x 40s linear infinite;
+  animation: scroll-x 90s linear infinite;
   align-items: center;
 }
 

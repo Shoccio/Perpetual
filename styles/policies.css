@@ -1,11 +1,20 @@
 /*start of ppup*/
-.ppup-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  margin-top: 5vi;
-  font-family: "Barlow Semi Condensed", sans-serif;
-}
+     
+        /* Main wrapper class */
+        .ppup-wrapper {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        /* Style for the image when placed on top */
+        .ppup-image {
+            display: block;
+            margin: 0 auto 2rem auto;
+            max-width: 60%;
+            height: auto;
+
+
+        }
 
 .ppup-wrapper h1 {
     text-align: center;
@@ -38,26 +47,16 @@
     margin-bottom: 1em;
 }
 
-.ppup-description {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
         .ppup-section {
             padding-bottom: 1rem;
             margin-bottom: 2rem;
-        }
-        .ppup-section + .ppup-section {
-            border-top: 1px solid #e5e7eb;
-            padding-top: 2rem;
         }
         .ppup-title {
             font-size: 2.25rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             text-align: center;
-            text-transform: uppercase;
+            
             letter-spacing: 0.05em;
             border-bottom: 1px solid #e5e7eb;
             padding-bottom: 0.75rem;
@@ -144,3 +143,77 @@
 .pmsup-list li {
   margin-bottom: 15px;
 }
+/*end of pmsup*/
+
+/*back button*/
+.back-button {
+  margin-top: 2rem; /* adjust value as needed */
+  margin-bottom: 1rem;
+
+  color: rgb(61, 61, 61);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/*start of afup*/
+.afup {
+  font-family: Arial, sans-serif;
+  padding: 50px 20px;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.7;
+}
+
+.afup .container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.afup h1 {
+  font-size: 1.9rem;
+  text-align: center;
+  font-weight: bold;
+  color: #173d7f;
+  margin-bottom: 40px;
+}
+
+.afup h2 {
+  font-size: 1.3rem;
+  color: #173d7f;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.afup h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000;
+  margin-top: 20px;
+}
+
+.afup p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.afup ul {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.afup ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.afup strong {
+  color: #000;
+}
+
+/*end of afuop*/

@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="author"
-      content="Clark Leovison C. Rey, Jerome Evangelista, Rojeth Justine Javaluyas"
+      content="Clark Leovison C. Rey, Jerome Evangelista, Rojeth Justine Javaluyas, Junell E. Torres"
     />
     <meta
       name="description"
       content="University of Perpetual Help System - Laguna, UPHSL, Perpetual Laguna"
     />
-    <title>Policy on Modern Slavery</title>
-    <link rel="icon" type="x-icon" href="img/SSS.png" />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/policies.css" />
+    <title>University of Perpetual Help System - Laguna</title>
+    <link rel="icon" type="x-icon" href="/img/SSS.png" />
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <link rel="stylesheet" href="/styles/News&Updates.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,7 +48,8 @@
         <div class="hitbox"></div>
 
         <ul class="navlist" data-active-index="" tabindex="0">
-          <li class="nav-item"><a href="#Home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+
           <!--Start of Program SubMenu-->
           <li class="nav-item" data-active="false">
             <label for="programs-checkbox">Programs</label>
@@ -274,7 +275,7 @@
                   >
                 </li>
                 <li><a href="#" class="nav-link">Our Philosophy</a></li>
-                <li><a href="#" class="nav-link">Quality Policy</a></li>
+                <li><a href="PolicyHome.html" class="nav-link">University Policy</a></li>
 
                 <li><a href="/about/map.html" class="nav-link">Map</a></li>
               </ul>
@@ -325,36 +326,36 @@
         <span class="yellow"></span>
       </nav>
     </header>
+    <main>
 
 
+<!--Start of Main Page-->
 
-<!--Start of pmsup Page-->
- <div style="height: 5vw;"></div>
-      
-<div class="pmsup-wrapper">
-  <section class="policy-section">
-    <h1 class="pmsup-title">Policy on Modern Slavery</h1>
-    <p class="pmsup-description">
-      As an academic institution, we are dedicated to fostering an environment that shall promote ethical practices, respect for human rights, and dignity of all individuals. This policy shall articulate our dedication addressing and eliminating forced labor, modern slavery, human trafficking, and child labor in its operations.
-    </p>
-  </section>
+<div style="height: 5vw;"></div>
 
-  <section class="pmsup-section">
-    <h2 class="pmsup2-title">Our Commitment</h2>
-   <ol class="pmsup-list">
-  <li><strong>Zero Tolerance</strong> – Uphold a zero-tolerance policy towards any form of forced labor, modern slavery, human trafficking, and child labor within our institution and its affiliates.</li>
-  <li><strong>Legal Compliance</strong> – Adhere to all relevant laws and regulations in relation to labor rights and human trafficking at local, national, and international levels.</li>
-  <li><strong>Risk Assessment</strong> – Perform regular evaluations to identify and address potential risks in recruitment and partnerships.</li>
-  <li><strong>Education and Training</strong> – Provide continuous education for staff and students on ethical conduct and awareness of labor and trafficking issues.</li>
-  <li><strong>Reporting Mechanism</strong> – Encourage safe reporting of violations, ensuring confidentiality and protection from retaliation.</li>
-  <li><strong>Continuous Improvement</strong> – Regularly review and improve policies to prevent forced labor and trafficking.</li>
-</ol>
-    <p class="pmsup-description">
-      The University is committed to creating a safe, equitable, and respectful environment for all members of the community. We continually oppose forced labor, modern slavery, human trafficking, and child labor while advancing social justice and upholding the values of integrity and respect for human rights in academia.
-    </p>
-  </section>
-</div>
-      <!--End of pmsup Page-->
+  <h1>MANAGEMENT COMMITTEE MEETING</h1>
+
+  <div class="scroll-gallery">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0001.jpg" alt="Page 1" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0002.jpg" alt="Page 2" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0003.jpg" alt="Page 3" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0004.jpg" alt="Page 4" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0005.jpg" alt="Page 5" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0006.jpg" alt="Page 6" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0007.jpg" alt="Page 7" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0008.jpg" alt="Page 8" onclick="openModal(this)">
+    <img src="/img/mancom/MANAGEMENT COMMITTEE MEETING_page-0009.jpg" alt="Page 9" onclick="openModal(this)">
+
+  </div>
+
+  <!-- Modal -->
+  <div id="pdfModal" class="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" class="modal-content" alt="Zoomed page">
+  </div>
+
+
+<!--End of Main Page-->
 
       <!-- footer -->
       <footer>
@@ -396,7 +397,7 @@
         </div>
 
         <div class="footer-bottom">
-          <img class="footer-logo" src="img/LG6.png" alt="" />
+          <img class="footer-logo" src="/img/LG6.png" alt="" />
 
           <div class="foot-copyright">
             <div class="counter" style="text-align: center">
@@ -422,7 +423,28 @@
     </main>
 
 
-  
+
+ <script>
+    function openModal(img) {
+      const modal = document.getElementById("pdfModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+
+    function closeModal() {
+      document.getElementById("pdfModal").style.display = "none";
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+    <script src="/script/slider.js"></script>
+
+
     <script src="/script/navbar.js"></script>
 
     <script src="/script/scrolltop.js"></script>
