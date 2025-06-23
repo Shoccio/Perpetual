@@ -36,7 +36,8 @@
   font-size: 18px;
 
   max-width: 900px;
-   font-family: "Barlow Semi Condensed", sans-serif;    
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin-bottom: 1em;
 }
 
 .ppup-wrapper ul{
