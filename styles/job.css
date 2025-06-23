@@ -1,0 +1,760 @@
+        /* Universal box-sizing for consistent layout */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* A modern, clean font */
+            background-color: #f6f8fa; /* Light grey background from image */
+            display: flex;
+            flex-direction: column; /* To stack header, main content, and footer */
+            justify-content: flex-start; /* Align content to the top initially */
+            align-items: center; /* Center horizontally */
+            min-height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            color: #333;
+            overflow-y: scroll; /* Allow vertical scrolling by default */
+        }
+
+        /* --- Header/Navigation Bar Styles --- */
+        .header {
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            position: sticky; /* Makes header sticky */
+            top: 0;
+            z-index: 1000; /* Ensures header stays on top */
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 40px; /* Adjust logo size */
+            margin-right: 10px;
+            border-radius: 50%; /* Make logo round if desired */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap; /* Allow links to wrap */
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #1890ff; /* Primary blue on hover */
+        }
+
+        .enroll-button {
+            background-color: #1890ff; /* Primary blue for Enroll button */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .enroll-button:hover {
+            background-color: #096dd9; /* Darker blue on hover */
+        }
+
+        /* --- Main Content Section (Job Poster Gallery) Styles --- */
+        .main-content {
+            flex-grow: 1; /* Allows main content to take available space */
+            display: flex;
+            flex-direction: column; /* Stack sections vertically */
+            justify-content: flex-start; /* Align content to the top within main */
+            align-items: center; /* Center horizontally */
+            width: 100%;
+            padding: 50px 0; /* Only vertical padding here, horizontal will be handled by inner container */
+        }
+
+        .job-posters-container { /* Main container for the entire gallery structure */
+            background-color: #ffffff;
+            /* Removed border-radius, box-shadow to make it whole page */
+            /* Removed max-width to allow it to span full width */
+            width: 100%; /* Make it full width */
+            text-align: center; /* Center tagline, h1, description */
+            box-sizing: border-box;
+            padding: 60px 40px; /* Padding now directly on this element for content spacing */
+        }
+
+        .tagline {
+            background-color: #e6f7ff;
+            color: #1890ff;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .job-posters-container h1 { /* Main heading for the gallery */
+            color: #2c3e50;
+            font-size: 3.2em;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .description {
+            color: #7f8c8d;
+            font-size: 1.15em;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Styles for individual horizontal sections (like YouTube categories) */
+        .horizontal-gallery-section {
+            width: 100%; /* Take full width of parent container */
+            margin-bottom: 40px; /* Space between sections */
+            text-align: left; /* Align section titles to the left */
+            padding: 0 40px; /* Add horizontal padding to the section itself */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .horizontal-gallery-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            /* padding-left: 10px; Removed as horizontal-gallery-section now has padding */
+        }
+
+        /* Horizontal scrolling container for posters */
+        .poster-scroll-container {
+            display: flex; /* Use flexbox for horizontal layout */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Smooth snap to cards */
+            -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+            padding: 10px; /* Padding for scrollable area */
+            gap: 20px; /* Space between poster cards */
+            margin-bottom: 20px; /* Space below scroll container */
+        }
+
+        /* Hide scrollbar for aesthetic purposes */
+        .poster-scroll-container::-webkit-scrollbar {
+            height: 8px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .poster-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+
+        .poster-scroll-container::-webkit-scrollbar-thumb:hover {
+            background-color: #bbb;
+        }
+
+
+        .poster-card {
+            flex-shrink: 0; /* Prevent cards from shrinking */
+            width: 300px; /* Fixed width for horizontal cards */
+            background-color: #ffffff;
+            border: 1px solid #e9edf2;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            scroll-snap-align: start; /* Snap to the start of each card */
+        }
+
+        .poster-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .poster-card img {
+            width: 100%;
+            height: 200px; /* Adjusted height for horizontal cards */
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .poster-info {
+            padding: 15px;
+            width: 100%;
+        }
+
+        .poster-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.1em;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .poster-description {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* --- Image Modal Styles --- */
+        .image-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* Above all other content */
+            visibility: hidden; /* Hidden by default */
+            opacity: 0; /* Fade in/out */
+            transition: visibility 0.3s, opacity 0.3s;
+        }
+
+        .image-modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-modal-content img {
+            max-width: 45%;
+            max-height: 45%;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            object-fit: contain; /* Ensure image fits within modal content without cropping */
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: -15px; /* Adjust as needed */
+            right: -15px; /* Adjust as needed */
+            background-color: white;
+            color: #333;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .image-modal-close:hover {
+            background-color: #eee;
+            transform: scale(1.1);
+        }
+
+        /* Prevents body scroll when modal is active */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+
+        /* --- Footer Styles --- */
+        .footer {
+            width: 100%;
+            background-color: #2c3e50; /* Dark blue/grey from image */
+            color: #ecf0f1; /* Light text color */
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Space between footer links */
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: #1890ff; /* Primary blue on hover */
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff; /* White text for footer logo */
+        }
+
+        .footer-logo img {
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #bdc3c7; /* Lighter grey for copyright */
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1024px) {
+            .header {
+                padding: 15px 20px;
+            }
+            .nav-links li {
+                margin-left: 20px;
+            }
+            .job-posters-container {
+                padding: 50px 30px; /* Adjusted padding as border/shadow removed */
+            }
+            .job-posters-container h1 {
+                font-size: 2.8em;
+            }
+            .description {
+                font-size: 1.1em;
+                margin-bottom: 40px;
+            }
+            .horizontal-gallery-section h2 {
+                font-size: 1.8em;
+            }
+            .horizontal-gallery-section {
+                padding: 0 30px; /* Adjust horizontal padding for sections */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 15px;
+            }
+            .header-logo {
+                margin-bottom: 15px;
+            }
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+            .nav-links li {
+                margin: 5px 0;
+            }
+            .enroll-button {
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-content {
+                padding: 30px 0; /* Reduced vertical padding */
+            }
+            .job-posters-container {
+                padding: 40px 25px; /* Adjusted padding */
+            }
+            .tagline {
+                font-size: 0.8em;
+                padding: 6px 18px;
+            }
+            .job-posters-container h1 {
+                font-size: 2.2em;
+            }
+            .description {
+                font-size: 1em;
+                margin-bottom: 30px;
+                max-width: 90%;
+            }
+            .horizontal-gallery-section h2 {
+                font-size: 1.6em;
+            }
+            .poster-card {
+                width: 250px; /* Adjust card width for smaller screens */
+            }
+            .poster-card img {
+                height: 180px;
+            }
+            .horizontal-gallery-section {
+                padding: 0 25px; /* Adjust horizontal padding for sections */
+            }
+
+            .footer {
+                padding: 30px 15px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 10px;
+            }
+            .header-logo {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+            .header-logo img {
+                height: 30px;
+            }
+            .nav-links li {
+                margin: 3px 0;
+            }
+            .nav-links a {
+                font-size: 0.9em;
+            }
+
+            .main-content {
+                padding: 20px 0; /* Reduced vertical padding */
+            }
+            .job-posters-container {
+                padding: 30px 15px; /* Adjusted padding */
+            }
+            .tagline {
+                font-size: 0.75em;
+                padding: 5px 12px;
+                margin-bottom: 15px;
+            }
+            .job-posters-container h1 {
+                font-size: 1.8em;
+            }
+            .description {
+                font-size: 0.9em;
+                margin-bottom: 25px;
+            }
+            .horizontal-gallery-section h2 {
+                font-size: 1.4em;
+            }
+            .poster-card {
+                width: 200px; /* Even smaller card width */
+            }
+            .poster-card img {
+                height: 150px;
+            }
+            .poster-info {
+                padding: 10px;
+            }
+            .poster-title {
+                font-size: 0.95em;
+            }
+            .poster-description {
+                font-size: 0.8em;
+            }
+            .horizontal-gallery-section {
+                padding: 0 15px; /* Adjust horizontal padding for sections */
+            }
+
+            .footer {
+                padding: 20px 10px;
+            }
+            .footer-logo {
+                font-size: 0.9em;
+            }
+            .footer-logo img {
+                height: 25px;
+            }
+            .copyright {
+                font-size: 0.8em;
+            }
+        }
+/*END OF PAGE*/
+/* --- Main Content Section (Job Categories) Styles --- */
+        .main-content {
+            flex-grow: 1; /* Allows main content to take available space */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the category section vertically within main-content */
+            width: 100%;
+            /* Removed padding from here as it's defined on home-page-section */
+        }
+
+        .home-page-section { /* Renamed from category-selection-section */
+            background-color: #ffffff;
+            padding: 60px 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        .tagline {
+            background-color: #e6f7ff;
+            color: #1890ff;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .home-page-section h1 { /* Renamed from category-selection-section h1 */
+            color: #2c3e50;
+            font-size: 3.2em;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .description {
+            color: #7f8c8d;
+            font-size: 1.15em;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .home-grid { /* Renamed from category-grid */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            padding: 0;
+        }
+
+        .category-card {
+            background-color: #fcfdff;
+            border: 1px solid #eef2f7;
+            border-radius: 12px;
+            padding: 35px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            background-color: #f0f8ff;
+        }
+
+        .card-icon-wrapper {
+            background-color: #e6f7ff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon-wrapper svg {
+            width: 40px;
+            height: 40px;
+            color: #1890ff;
+            fill: #1890ff;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.15em;
+            line-height: 1.3;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column; /* Stack logo and nav on smaller screens */
+                align-items: flex-start;
+                padding: 15px 15px;
+            }
+            .header-logo {
+                margin-bottom: 15px;
+            }
+            .nav-links {
+                flex-direction: column; /* Stack nav links vertically */
+                width: 100%;
+                align-items: flex-start;
+            }
+            .nav-links li {
+                margin: 5px 0; /* Adjust vertical spacing */
+            }
+            .enroll-button {
+                margin-top: 15px;
+                width: 100%; /* Make button full width */
+                text-align: center;
+            }
+
+            .main-content {
+                padding: 30px 10px;
+            }
+            .home-page-section { /* Renamed */
+                padding: 40px 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+            .tagline {
+                font-size: 0.8em;
+                padding: 6px 18px;
+            }
+            .home-page-section h1 { /* Renamed */
+                font-size: 2.2em;
+            }
+            .description {
+                font-size: 1em;
+                margin-bottom: 30px;
+                max-width: 90%;
+            }
+            .home-grid { /* Renamed */
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+            .card-icon-wrapper {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 15px;
+            }
+            .card-icon-wrapper svg {
+                width: 35px;
+                height: 35px;
+            }
+            .card-title {
+                font-size: 1em;
+            }
+
+            .footer {
+                padding: 30px 15px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 10px;
+            }
+            .header-logo {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+            .header-logo img {
+                height: 30px;
+            }
+            .nav-links li {
+                margin: 3px 0;
+            }
+            .nav-links a {
+                font-size: 0.9em;
+            }
+
+            .main-content {
+                padding: 20px 8px;
+            }
+            .home-page-section { /* Renamed */
+                padding: 30px 15px;
+                border-radius: 10px;
+            }
+            .tagline {
+                font-size: 0.75em;
+                padding: 5px 12px;
+                margin-bottom: 15px;
+            }
+            .home-page-section h1 { /* Renamed */
+                font-size: 1.8em;
+            }
+            .description {
+                font-size: 0.9em;
+                margin-bottom: 25px;
+            }
+            .home-grid { /* Renamed */
+                grid-template-columns: 1fr; /* Single column on very small mobile */
+                gap: 15px;
+            }
+            .card-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 12px;
+            }
+            .card-icon-wrapper svg {
+                width: 30px;
+                height: 30px;
+            }
+            .card-title {
+                font-size: 0.95em;
+            }
+
+            .footer {
+                padding: 20px 10px;
+            }
+            .footer-logo {
+                font-size: 0.9em;
+            }
+            .footer-logo img {
+                height: 25px;
+            }
+            .copyright {
+                font-size: 0.8em;
+            }
+        }
